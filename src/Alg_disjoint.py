@@ -6,17 +6,43 @@ by M. H. H. Schoot Uiterkamp
 
 """
 
+
+
+'''
+
+In more detail: solves the following optimization problem:
+
+min_{x \in \mathbb{R}^n}  \sum_{i=1}^n (x_i + b_i)^2
+subject to
+\sum_{i \in N} x_i = R;
+x_i \in \cup_{j =1,...,m} [l_{i,j} , u_{i,j}],  i =1,...,n,
+
+under the following assumption on the interval bounds l_{i,j} and u_{i,j} (Assumption 1 in the paper):
+
+For all i=1,...,n,  for each j=2,...,m, we have l_{i,j} = \tilde{l}_j for some \tilde{l}_j \in \mathbb{R} and for each j = 1,..., m-1 we have u_{i,j} = \tilde{u}_j for some \tilde{u}_j \in \mathbb{R}. 
+
+
+Description of and conditions on input:
+
+Parameter    Description                                                                                                                       Format                                        
+R            resource value                                                                                                                    Scalar
+b            Shift vector in objective function                                                                                                List, sorted non-increasingly
+lower_fixed  Vector of lower bounds of disjoint intervals 2 to m (\tilde{l} in paper)                                                          List
+upper_fixed  Vector of upper bounds of disjoint intervals 1 to (m-1) (\tilde{u} in paper)                                                      List
+lower_var    Vector of lower bounds of individual variables (alternatively: lower bounds of each first disjoint interval) (l_{i,1} in paper)   List
+upper_var    Vector of upper bounds of individual variables (alternatively: upper bounds of each m-th disjoint interval) (u_{i,n} in ppaer)    List
+
+Additionally, lower_fixed (\tilde{l}) and upper_fixed (\tilde{u}), together lower_var (l_{i,1}) and upper_var (u_{i,n}) should satisfy conditions in the paper.
+For these conditions, see the file ``Overview of requirements on interval lengths.png'' (Table 1 in the paper) in the same directory as this file.
+
+'''
+
 import math
 import itertools
 import heapq
 import random
 random.seed(42)
 
-'''
-Conditions on input:
-    - List b is sorted non-increasingly;
-    - lower_fixed (l^{\tilde}) and upper_fixed (u^{\tilde}), together lower_var (l_{i,1}) and upper_var (u_{i,n}) should satisfy conditions in the paper:
-'''
 def RAP_disjoint(R,b,lower_fixed, upper_fixed, lower_var, upper_var):
     
     #Dimensions
