@@ -21,8 +21,8 @@ https://doi.org/10.1287/ijoc.2023.0263.cd
 Below is the BibTex for citing this snapshot of the repository.
 
 ```
-@misc{CacheTest,
-  author =        {M. H. H. Schoot Uiterkamp},
+@misc{SchootUiterkamp2024IJOCrepo,
+  author =        {M. H. H. {Schoot Uiterkamp}},
   publisher =     {INFORMS Journal on Computing},
   title =         {Symmetric separable convex resource allocation problems with structured disjoint interval bound constraints},
   year =          {2024},
