@@ -46,6 +46,11 @@ To reproduce the numerical results of the paper, the script Comparison_RAP_DIBC.
 Warning: running the second part of the script (scalability analysis) has a high total running time.
 
 
+## Data
+
+The first set of numberical experiments (EV instances) uses data on household consumption that was obtained in the field test described in [this paper](https://digital-library.theiet.org/doi/10.1049/oap-cired.2017.0340?doi=10.1049/oap-cired.2017.0340). These data cannot be shared publicly; for the sake of reproduction of the results, a synthetic derivative of this set is provided here.
+
+The second set of numerical experiments (scalability) uses synthetical problem instances whose parameters are randomly generated. These instances are (re)generated when running the script Comparison_RAP_DIBC.py.
 
 
 ## Results
@@ -56,3 +61,8 @@ The raw output and figures in the paper are in the subdirectory "Results". This 
 - For the scalability evaluation: one file for each combination of considered number of disjoint intervals (m = 2, 3, or 4) and algorithm (exact or (g)urobi); 
 - Figure 1: Boxplots of the ratios of the execution times between Gurobi and the exact algorithm for each charging requirement;
 - Figure 2: Execution times of the exact algorithm (circles, black) and Gurobi (triangles, gray) where the number of disjoint intervals is 2 (Figure 2a), 3 (Figure 2b), or 4 (Figure 2c).
+
+
+## Ongoing development
+
+Any future improvements to this code will be developed at the author's [Github site](https://github.com/mhhschootuiterkamp/RAP_DIBC).
