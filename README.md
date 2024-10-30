@@ -48,7 +48,7 @@ Warning: running the second part of the script (scalability analysis) has a high
 
 ## Data
 
-The first set of numberical experiments (EV instances) uses data on household consumption that was obtained in the field test described in [this paper](https://digital-library.theiet.org/doi/10.1049/oap-cired.2017.0340?doi=10.1049/oap-cired.2017.0340). These data cannot be shared publicly; for the sake of reproduction of the results, a synthetic derivative of this set is provided here.
+The first set of numberical experiments (EV instances) uses data on household consumption that was obtained in the field test described in [this paper](https://digital-library.theiet.org/doi/10.1049/oap-cired.2017.0340?doi=10.1049/oap-cired.2017.0340). These data cannot be shared publicly; for the sake of reproduction of the results, a synthetic derivative is provided here.
 
 The second set of numerical experiments (scalability) uses synthetical problem instances whose parameters are randomly generated. These instances are (re)generated when running the script Comparison_RAP_DIBC.py.
 
